@@ -1,0 +1,168 @@
+:root {
+  --bg: #0e131a;
+  --fg: #e8eef6;
+  --panel: #19222e;
+  --border: #2b3a4d;
+  --accent: #ffd25a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 20px 16px;
+}
+
+#app {
+  width: min(1480px, 100%);
+}
+
+header h1 {
+  margin: 0 0 4px;
+  font-size: 22px;
+}
+
+header p {
+  margin: 0 0 16px;
+  color: #93a5bd;
+  font-size: 14px;
+}
+
+#layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 16px;
+}
+
+@media (max-width: 980px) {
+  #layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+#scene {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+#panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 13px;
+}
+
+#panel section {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+#panel h2 {
+  margin: 0 0 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #93a5bd;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.row button {
+  background: #223144;
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.row button.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+#controls label {
+  display: block;
+  margin: 8px 0;
+}
+
+#controls input[type='range'] {
+  width: 100%;
+}
+
+.legend {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-transform: capitalize;
+}
+
+.legend i {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  border: 1px solid;
+}
+
+.hint {
+  color: #93a5bd;
+  margin: 10px 0 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+.stat {
+  background: #121b26;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.stat b {
+  display: block;
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+}
+
+.integrity-bar {
+  margin-top: 12px;
+  height: 10px;
+  background: #121b26;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.integrity-bar div {
+  height: 100%;
+  background: linear-gradient(90deg, #ff5d5d, #ffd25a, #58d68d);
+}
