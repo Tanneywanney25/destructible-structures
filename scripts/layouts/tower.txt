@@ -1,0 +1,11 @@
+name: Watchtower
+cell: 42
+origin: 640 508
+---
+.GG.
+wwww
+.WW.
+.WW.
+ssss
+S..S
+S..S

@@ -1,0 +1,8 @@
+name: Glass Wall
+cell: 38
+origin: 620 508
+---
+GGGGG
+GGGGG
+WWWWW
+SSSSS

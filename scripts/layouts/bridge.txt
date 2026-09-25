@@ -1,0 +1,9 @@
+name: Bridge
+cell: 40
+origin: 420 508
+---
+G.......G
+wwwwwwwww
+S.......S
+S.......S
+S.......S
