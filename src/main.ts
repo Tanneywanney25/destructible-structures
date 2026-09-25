@@ -12,7 +12,7 @@ function requireEl<T extends HTMLElement>(selector: string): T {
 }
 
 async function fetchStructure(name: string): Promise<Structure> {
-  const res = await fetch(`/structures/${name}.json`);
+  const res = await fetch(`structures/${name}.json`);
   if (!res.ok) throw new Error(`structure ${name}: HTTP ${res.status}`);
   return parseStructure(await res.json());
 }
