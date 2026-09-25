@@ -98,12 +98,15 @@ export class SmashWorld {
       if (dist > radius || dist === 0) continue;
       const falloff = 1 - dist / radius;
       const magnitude = impulseScale * falloff;
+      // Halve the raw shove so blocks tumble rather than launch into orbit.
       Matter.Body.applyForce(block.body, { x, y }, {
-        x: (dx / dist) * magnitude,
-        y: (dy / dist) * magnitude,
+        x: (dx / dist) * magnitude * 0.5,
+        y: (dy / dist) * magnitude * 0.5,
       });
-      // The strike itself also damages: treat it as an impulse event.
-      const strikeImpulse = magnitude * 120; // scale force into the impulse domain
+      // The strike itself also damages: treat it as an impulse event. The 60×
+      // conversion one-shots glass at default power, dents wood, and leaves
+      // stone standing until the slider goes up.
+      const strikeImpulse = magnitude * 60;
       this.peak.record(strikeImpulse);
       this.pendingDamage.set(
         block.body,
